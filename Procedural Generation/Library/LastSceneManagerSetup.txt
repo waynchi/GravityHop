@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/GenerationScene.unity
+  isLoaded: 1
+  isActive: 1
