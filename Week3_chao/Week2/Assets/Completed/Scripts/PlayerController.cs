@@ -46,9 +46,10 @@ public class PlayerController : MonoBehaviour {
 		foreach (Vector2 index in MassList){
 			if ((index - rg2d.position).magnitude <= 5) { // find a force master
 				if (needAntiV) {
-					rg2d.AddForce (-rg2d.velocity * 0.2f, ForceMode2D.Impulse);
+					rg2d.AddForce (-rg2d.velocity, ForceMode2D.Impulse);
 					Vector2 initCircling = new Vector2 (-(rg2d.position-index).y,(rg2d.position-index).x );
-					rg2d.AddForce (initCircling*0.1f, ForceMode2D.Impulse);
+					rg2d.AddForce (initCircling, ForceMode2D.Impulse);
+					needAntiV = false;
 
 				}
 
