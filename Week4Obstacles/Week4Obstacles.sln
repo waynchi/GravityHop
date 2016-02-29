@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week4Obstacles.CSharp", "Week4Obstacles.CSharp.csproj", "{3EF35D7A-FF11-5BCD-AC48-C5CBB8368701}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week4Obstacles.CSharp.Editor", "Week4Obstacles.CSharp.Editor.csproj", "{5FA088B5-DCDA-9526-2B72-4CF9F820FCD5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3EF35D7A-FF11-5BCD-AC48-C5CBB8368701}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EF35D7A-FF11-5BCD-AC48-C5CBB8368701}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EF35D7A-FF11-5BCD-AC48-C5CBB8368701}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EF35D7A-FF11-5BCD-AC48-C5CBB8368701}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FA088B5-DCDA-9526-2B72-4CF9F820FCD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FA088B5-DCDA-9526-2B72-4CF9F820FCD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FA088B5-DCDA-9526-2B72-4CF9F820FCD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FA088B5-DCDA-9526-2B72-4CF9F820FCD5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
