@@ -1,10 +1,11 @@
-﻿<Properties StartupItem="Assembly-CSharp.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GenerateZone.cs">
+﻿<Properties StartupItem="Procedural Generation.CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameOverScript.cs">
     <Files>
-      <File FileName="Assets/Scripts/Movement.cs" Line="17" Column="36" />
-      <File FileName="Assets/Scripts/CameraFollowSmooth.cs" Line="13" Column="3" />
-      <File FileName="Assets/Scripts/GenerateZone.cs" Line="33" Column="112" />
+      <File FileName="Assets\Scripts\GameOverScript.cs" Line="13" Column="2" />
+      <File FileName="Assets\Scripts\Movement.cs" Line="2" Column="1" />
+      <File FileName="Assets\Scripts\CameraFollowSmooth.cs" Line="13" Column="3" />
+      <File FileName="Assets\Scripts\GenerateZone.cs" Line="33" Column="112" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
