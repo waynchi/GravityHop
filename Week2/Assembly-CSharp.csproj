@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{FC9411EB-1B12-4154-0219-EEA7CBD09863}</ProjectGuid>
+    <ProjectGuid>{49D0098B-0DF6-F8CA-BCE2-1A81A2E906EA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -48,6 +48,7 @@
      <Compile Include="Assets\Completed\Scripts\CompleteCameraController.cs" />
      <Compile Include="Assets\Completed\Scripts\CompletePlayerController.cs" />
      <Compile Include="Assets\Completed\Scripts\CompleteRotator.cs" />
+     <Compile Include="Assets\Completed\Scripts\FuelSystem.cs" />
      <Compile Include="Assets\Completed\Scripts\PlayerController.cs" />
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
