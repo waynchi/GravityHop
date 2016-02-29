@@ -8,6 +8,8 @@ public class ScoreSystem : MonoBehaviour {
     public int scoreMultiplier;
     public float timeMultiplier;
 
+	private bool stop; 
+
     public void addMultiplier()
     {
         ++scoreMultiplier;
@@ -32,17 +34,27 @@ public class ScoreSystem : MonoBehaviour {
 	void UpdateScore () {
         // set the text with score
         text.text = "" + score;
-        score += 5 * scoreMultiplier;
-
-        if(scoreMultiplier > 1)
-        {
-            timeMultiplier += Time.deltaTime;
-            if (timeMultiplier > 10) // time of multiplier is 10 seconds
-            {
-                scoreMultiplier = 1; // multiplier is back to normal
-                timeMultiplier = 0;
-            }
-        }
+		if (!stop) {
+			score += 5 * scoreMultiplier;
+		}
+		if (Input.GetKey ("g")) {
+			stop = true;
+		}
+		if (Input.GetKey ("r")) {
+			stop = false;
+		}
+		if (!stop) {
+			if(scoreMultiplier > 1)
+			{
+				timeMultiplier += Time.deltaTime;
+				if (timeMultiplier > 10) // time of multiplier is 10 seconds
+				{
+					scoreMultiplier = 1; // multiplier is back to normal
+					timeMultiplier = 0;
+				}
+			}
+		}
+        
 	}
 
 }
