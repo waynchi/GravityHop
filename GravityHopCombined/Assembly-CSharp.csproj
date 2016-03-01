@@ -52,6 +52,7 @@
      <Compile Include="Assets\Script\Planet.cs" />
      <Compile Include="Assets\Script\PlanetMove.cs" />
      <Compile Include="Assets\Script\PlayerController.cs" />
+     <Compile Include="Assets\Script\Restart.cs" />
      <Compile Include="Assets\Script\ScoreSystem.cs" />
      <Compile Include="Assets\Script\StopGravity.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
