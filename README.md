@@ -5,6 +5,7 @@ Our gravity based game
 Load the project, hit 'left' to release, and hit 'up' or 'down' to tune the orbit.
 
 # 02-04-10-14AM Alex Wang
+Changes are under branch "Tracker".
 Gravity fields and offscreen indicators are implemented. Here's how they work:
 
 GRAVITY FIELD
