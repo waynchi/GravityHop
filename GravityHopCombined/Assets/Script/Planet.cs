@@ -13,7 +13,10 @@ public class Planet : MonoBehaviour {
 		ef2d.forceMagnitude = -rg2d.mass;
 		rg2d.freezeRotation = true;
 
-	}
+        GameObject child = Instantiate(GameObject.FindGameObjectWithTag("Field"), transform.position, transform.rotation) as GameObject;
+        child.transform.localScale = child.transform.localScale * transform.localScale.x;
+        //child.transform
+    }
 	
 	// Update is called once per frame
 	void Update () {
