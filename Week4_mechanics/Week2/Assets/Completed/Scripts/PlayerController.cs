@@ -89,27 +89,30 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Combo(){
-		if (ComboInitiated) {
-			if (Time.time - lastComboTime > comboTime) {
-				ComboInitiated = false;
-				ComboCount = 0;
+		if (started) {
+
+			if (ComboInitiated) {
+				if (Time.time - lastComboTime > comboTime) {
+					ComboInitiated = false;
+					ComboCount = 0;
+					displayComboContent = "";
+				} else {
+					if (!MassCenter.Equals (LastMassCenter)) {
+						ComboCount++;
+						lastComboTime = Time.time;
+						displayComboContent = "Combo: " + ComboCount.ToString () + "  !!!";
+					}
+				}
+
 			} else {
 				if (!MassCenter.Equals (LastMassCenter)) {
-					ComboCount++;
+					ComboInitiated = true;
+					ComboCount = 1;
 					lastComboTime = Time.time;
-					displayComboContent = "Combo: " + ComboCount.ToString() +"!!";
+					displayComboContent = "Combo: " + ComboCount.ToString () + "  !!!";
 				}
 			}
-
-		} else {
-			if (!MassCenter.Equals (LastMassCenter)) {
-				ComboInitiated = true;
-				ComboCount = 1;
-				lastComboTime = Time.time;
-				displayComboContent = "Combo: " + ComboCount.ToString() +"!!";
-			}
 		}
-
 
 	}
 /*
