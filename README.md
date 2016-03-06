@@ -1,6 +1,11 @@
 # GravityHop
 Our gravity based game
 
+#03-06 1:03AM Xuechao
+- Combo System Added
+- Display when there is combo, and disappear when there isn't
+
+
 #03-06 12:10AM Xuechao
 - Button touching won't be caught by DetectInput() anymore.
 - The player will surround on the surface of the planet unless tap is detected.
