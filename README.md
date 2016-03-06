@@ -1,6 +1,10 @@
 # GravityHop
 Our gravity based game
 
+#03-07 10:42AM Sophia
+- Start Screen Finished
+- Modified Font 
+
 #03-06 1:03AM Xuechao
 - Combo System Added
 - Display when there is combo, and disappear when there isn't
