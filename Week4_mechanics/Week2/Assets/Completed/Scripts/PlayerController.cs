@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour {
 	public float fuel = 100;
 	public Vector2 MassCenter,WalkingDirection,BurstDirecton;
 	private Rigidbody2D rg2d;
-	private bool UFOEnableTouch = false,started = false;
+	private bool UFOEnableTouch = false,started = false, touchButton = true;
 
 
 
@@ -41,6 +41,11 @@ public class PlayerController : MonoBehaviour {
 
 		foreach (Touch touch in Input.touches) {
 			if (touch.phase == TouchPhase.Ended){
+
+				if (touchButton) {
+					touchButton = false;
+					continue;
+				}
 				if (fuel > 0 && UFOEnableTouch) {
 					rg2d.AddForce (BurstDirecton * 1500, ForceMode2D.Force);
 				}
