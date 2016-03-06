@@ -1,6 +1,14 @@
 # GravityHop
 Our gravity based game
 
+#03-06 12:10AM Xuechao
+- Button touching won't be caught by DetectInput() anymore.
+- The player will surround on the surface of the planet unless tap is detected.
+- Tap will let the player fly out on the perpendicular direction. 
+
+
+
+
 # 02-04-10-14AM Xuechao
 Load the project, hit 'left' to release, and hit 'up' or 'down' to tune the orbit.
 
