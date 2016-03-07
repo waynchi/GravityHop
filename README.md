@@ -1,5 +1,7 @@
 # GravityHop
 Our gravity based game
+# Xuechao on 1:33PM
+cannot pull
 
 #03-07 11:59PM Xuechao
 - Startbutton need to enable camera. I added that stuff in onClick()
