@@ -23,7 +23,8 @@ public class CompleteCameraController : MonoBehaviour {
 	// LateUpdate is called after Update each frame
 	void LateUpdate () 
 	{
-		offset.z = -20;	
+		if(offset.z<-20)
+			offset.z+=5;	
 		transform.position = player.transform.position + offset;
 			
 	}
