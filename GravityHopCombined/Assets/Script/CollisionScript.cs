@@ -4,6 +4,7 @@ using System.Collections;
 public class CollisionScript : MonoBehaviour {
 
 	public Canvas HUDCanvas;
+	public Canvas RestartCanvas;
 	public Canvas ScoreCanvas;
 	Animator anim;
 	ScoreSystem scoreScript;
@@ -20,7 +21,6 @@ public class CollisionScript : MonoBehaviour {
         ss = GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreSystem>();
         rb2d = GetComponent<Rigidbody2D>();
         invincibility = false;
-		anim = HUDCanvas.GetComponent<Animator> ();
 		scoreScript = ScoreCanvas.GetComponentInChildren<ScoreSystem> ();
 		restartDelay = 5f;
 		restartCount = 0;
@@ -122,9 +122,14 @@ public class CollisionScript : MonoBehaviour {
     }
 
 	void GameOver () {
+		anim = HUDCanvas.GetComponent<Animator> ();
 		anim.SetTrigger ("GameOver");
 		scoreScript.stop = true;
 		HUDCanvas.GetComponentInChildren<UnityEngine.UI.Button> ().enabled = true;
+
+		anim = RestartCanvas.GetComponent<Animator> ();
+		anim.SetTrigger ("GameOver");
+
 	}
 
     // Update is called once per frame
