@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Script\CollisionScript.cs" />
+     <Compile Include="Assets\Script\CompleteCameraController.cs" />
      <Compile Include="Assets\Script\DroneScript.cs" />
      <Compile Include="Assets\Script\GameOverScript.cs" />
      <Compile Include="Assets\Script\LaserScript.cs" />
