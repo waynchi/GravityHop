@@ -1,6 +1,13 @@
 # GravityHop
 Our gravity based game
 
+#03-07 11:59PM Xuechao
+- Startbutton need to enable camera. I added that stuff in onClick()
+- Planets somehow is generating too much force. Also the collider shape doesnt match the sprite.
+- Added background music and tapping sound effect.
+- Added Zooming In
+- Modified Tapping force in playcontroller.csharp
+
 #03-06 1:03AM Xuechao
 - Combo System Added
 - Display when there is combo, and disappear when there isn't

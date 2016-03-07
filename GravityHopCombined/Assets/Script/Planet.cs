@@ -11,7 +11,7 @@ public class Planet : MonoBehaviour {
 		rg2d = GetComponent<Rigidbody2D> ();
 		ef2d = GetComponent<PointEffector2D> ();
 		rg2d.mass = 100;
-		ef2d.forceMagnitude = -rg2d.mass*20;
+		ef2d.forceMagnitude = -rg2d.mass*2;
 
 	}
 	

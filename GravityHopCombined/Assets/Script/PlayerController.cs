@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour {
 	public string displayComboContent; 
 
 	public Text DisplayCombo;
+	public AudioSource bouncingSound;
 
 
 
@@ -25,7 +26,7 @@ public class PlayerController : MonoBehaviour {
 
 		rg2d = GetComponent<Rigidbody2D> ();
 		rg2d.mass = 2;
-		rg2d.AddForce (5*rg2d.position, ForceMode2D.Impulse); //Initialize Movement
+		rg2d.AddForce (7*rg2d.position.normalized, ForceMode2D.Impulse); //Initialize Movement
 
 	}
 
@@ -56,17 +57,18 @@ public class PlayerController : MonoBehaviour {
 					continue;
 				}
 				if (fuel > 0 && UFOEnableTouch) {
-					rg2d.AddForce (BurstDirecton * 1900, ForceMode2D.Force);
+					rg2d.AddForce (BurstDirecton * 4000, ForceMode2D.Force);
+					bouncingSound.Play ();
 				}
 				//if(fuel>0)
 				//fuel -= touch.deltaPosition.magnitude/10;
 				UFOEnableTouch = false;
 			}
 		}
-		if (rg2d.velocity.magnitude > 50)
-			rg2d.velocity = rg2d.velocity.normalized * 10;
-		if (rg2d.velocity.magnitude < 10)
-			rg2d.velocity = rg2d.velocity.normalized * 10;
+		if (rg2d.velocity.magnitude > 10)
+			rg2d.velocity = rg2d.velocity.normalized * 3;
+		if (rg2d.velocity.magnitude < 3)
+			rg2d.velocity = rg2d.velocity.normalized * 3;
 		if (Time.time - lastComboTime > comboTime) {
 			ComboInitiated = false;
 			ComboCount = 0;
