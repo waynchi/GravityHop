@@ -50,6 +50,7 @@
      <Compile Include="Assets\Script\DroneScript.cs" />
      <Compile Include="Assets\Script\GameOverScript.cs" />
      <Compile Include="Assets\Script\LaserScript.cs" />
+     <Compile Include="Assets\Script\OffscreenTracker.cs" />
      <Compile Include="Assets\Script\Planet.cs" />
      <Compile Include="Assets\Script\PlanetMove.cs" />
      <Compile Include="Assets\Script\PlayerController.cs" />

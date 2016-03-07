@@ -58,8 +58,8 @@ public class OffscreenTracker : MonoBehaviour {
         dir2.Normalize();
 
         // Place two indicators for the nearest planets
-        bubble1.rectTransform.anchoredPosition = dir * 140;
-        bubble2.rectTransform.anchoredPosition = dir2 * 140;
+        bubble1.rectTransform.anchoredPosition = dir * 400;
+        bubble2.rectTransform.anchoredPosition = dir2 * 400;
 
     }
 }
