@@ -11,7 +11,7 @@ public class Planet : MonoBehaviour {
 		rg2d = GetComponent<Rigidbody2D> ();
 		ef2d = GetComponent<PointEffector2D> ();
 		rg2d.mass = 100;
-		ef2d.forceMagnitude = -rg2d.mass*20;
+		ef2d.forceMagnitude = -rg2d.mass*2;
 
         GameObject child = Instantiate(GameObject.FindGameObjectWithTag("Field"), transform.position, transform.rotation) as GameObject;
         child.transform.localScale = child.transform.localScale * transform.localScale.x;
