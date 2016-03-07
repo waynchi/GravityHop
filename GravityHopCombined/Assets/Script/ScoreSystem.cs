@@ -3,12 +3,14 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class ScoreSystem : MonoBehaviour {
+
+
     Text text;
     public int score;
     public int scoreMultiplier;
     public float timeMultiplier;
 
-	private bool stop; 
+	public bool stop; 
 
     public void addMultiplier()
     {
@@ -37,12 +39,6 @@ public class ScoreSystem : MonoBehaviour {
 		if (!stop) {
 			score += 5 * scoreMultiplier;
 		}
-		if (Input.GetKey ("g")) {
-			stop = true;
-		}
-		if (Input.GetKey ("r")) {
-			stop = false;
-		}
 		if (!stop) {
 			if(scoreMultiplier > 1)
 			{
@@ -55,6 +51,14 @@ public class ScoreSystem : MonoBehaviour {
 			}
 		}
         
+	}
+
+	void StopGame() {
+		stop = true;
+	}
+
+	void StartGame() {
+		stop = false;
 	}
 
 }
