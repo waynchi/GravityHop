@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour {
 	public float fuel = 100;
 	public Vector2 MassCenter,WalkingDirection,BurstDirecton,LastMassCenter;
 	private Rigidbody2D rg2d;
-	private bool UFOEnableTouch = false,started = false, touchButton = true;
+	private bool UFOEnableTouch = false,started = true, touchButton = true;
 
 	public bool ComboInitiated = false;
 	public float lastComboTime = 0.0F;
