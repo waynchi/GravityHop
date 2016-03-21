@@ -81,10 +81,11 @@ public class PlayerController : MonoBehaviour {
 		
 
 	void OnCollisionEnter2D(Collision2D coll) {
-
+		print("TEST");
 		Rigidbody2D coll_rg = coll.gameObject.GetComponent<Rigidbody2D> ();
 		LastMassCenter = MassCenter;
 		MassCenter = coll_rg.position;
+	
 		UFOEnableTouch = true;
 	}
 
