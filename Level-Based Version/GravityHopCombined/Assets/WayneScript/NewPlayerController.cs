@@ -3,6 +3,9 @@ using System.Collections;
 
 public class NewPlayerController : MonoBehaviour {
 
+	//Key State Machine
+	public CentralStateScript stateMachine;
+
 	public float speed=1;
 	public Vector2 MassCenter,WalkingDirection,BurstDirecton,LastMassCenter;
 	private Rigidbody2D rg2d;
@@ -16,6 +19,7 @@ public class NewPlayerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Debug.Assert (stateMachine);
 		rg2d = GetComponent<Rigidbody2D> ();
 		rg2d.mass = 2;
 		Vector2 initial_Dir = new Vector2 (-4, 1);
@@ -45,6 +49,12 @@ public class NewPlayerController : MonoBehaviour {
 				if (bouncingSound != null) {
 					bouncingSound.Play ();
 				}
+				if (stateMachine) {
+					stateMachine.enterFlight ();
+				} else {
+					Debug.Log ("State Machine does not exist");
+					Application.Quit ();
+				}
 				UFOEnableTouch = false;
 			}
 
@@ -63,8 +73,17 @@ public class NewPlayerController : MonoBehaviour {
 			MassCenter = coll_rg.position;
 
 			UFOEnableTouch = true;
+
+
+
 			if (comboScript != null && MassCenter != LastMassCenter) {
 				comboScript.Combo ();
+				if (stateMachine) {
+					stateMachine.enterOrbit ();
+				} else {
+					Debug.Log ("State Machine does not exist");
+					Application.Quit ();
+				}
 			}
 		}
 	}
