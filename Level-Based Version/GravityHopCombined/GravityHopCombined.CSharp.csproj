@@ -73,8 +73,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Alex Scripts Prefab\BackgroundScript.cs" />
     <Compile Include="Assets\Alex Scripts Prefab\NewCollisionScript.cs" />
     <Compile Include="Assets\Alex Scripts Prefab\NewGameOverScript.cs" />
+    <Compile Include="Assets\Alex Scripts Prefab\StartScript.cs" />
     <Compile Include="Assets\Script\CollisionScript.cs" />
     <Compile Include="Assets\Script\CompleteCameraController.cs" />
     <Compile Include="Assets\Script\DroneScript.cs" />
@@ -87,8 +89,10 @@
     <Compile Include="Assets\Script\Restart.cs" />
     <Compile Include="Assets\Script\ScoreSystem.cs" />
     <Compile Include="Assets\Script\StopGravity.cs" />
+    <Compile Include="Assets\WayneScript\CentralStateScript.cs" />
     <Compile Include="Assets\WayneScript\NewComboScript.cs" />
     <Compile Include="Assets\WayneScript\NewPlayerController.cs" />
+    <Compile Include="Assets\WayneScript\OxygenScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
