@@ -13,11 +13,7 @@ public class Planet : MonoBehaviour {
 		rg2d.mass = 30;
 		ef2d.forceMagnitude = -rg2d.mass*2;
 
-		if (GameObject.FindGameObjectWithTag ("Field") != null) {
-			GameObject child = Instantiate (GameObject.FindGameObjectWithTag ("Field"), transform.position, transform.rotation) as GameObject;
-			child.transform.localScale = child.transform.localScale * transform.localScale.x;
-		}
-        //child.transform
+        Instantiate(Resources.Load("Gravity Field"), transform.position, transform.rotation);
     }
 	
 	// Update is called once per frame

@@ -9,6 +9,7 @@ public class NewPlayerController : MonoBehaviour {
 	public float speed=1;
 	public Vector2 MassCenter,WalkingDirection,BurstDirecton,LastMassCenter;
 	private Rigidbody2D rg2d;
+    private PointEffector2D CurrentPlanet, LastPlanet;
 	private bool UFOEnableTouch = false, touchButton = true;
 
 	//Audio portion of the code
@@ -44,8 +45,10 @@ public class NewPlayerController : MonoBehaviour {
 				touchButton = false;
 			}
 			if (UFOEnableTouch) {
-				//Take flight
-				rg2d.AddForce (BurstDirecton * 4000, ForceMode2D.Force);
+                //Take flight
+                CurrentPlanet.enabled = false;
+                rg2d.velocity = BurstDirecton * 200;
+//                rg2d.AddForce (BurstDirecton * 4000, ForceMode2D.Force);
 				if (bouncingSound != null) {
 					bouncingSound.Play ();
 				}
@@ -74,9 +77,14 @@ public class NewPlayerController : MonoBehaviour {
 
 			UFOEnableTouch = true;
 
+            // grabs the rigidbody for planet landed on
+            
+            LastPlanet = CurrentPlanet;
+            CurrentPlanet = coll.gameObject.GetComponent<PointEffector2D>();
+            if (LastPlanet != null)
+                LastPlanet.enabled = true;
 
-
-			if (comboScript != null && MassCenter != LastMassCenter) {
+            if (comboScript != null && MassCenter != LastMassCenter) {
 				comboScript.Combo ();
 				if (stateMachine) {
 					stateMachine.enterOrbit ();
