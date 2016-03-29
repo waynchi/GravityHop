@@ -6,10 +6,13 @@ using System;
 public class NewGameOverScript : MonoBehaviour {
 
 	Animator anim;
+    public CentralStateScript stateMachine;
+    bool isGameOver;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		anim = GetComponent<Animator> ();
+        isGameOver = false;
 	}
 	
 	// Update is called once per frame
@@ -19,6 +22,11 @@ public class NewGameOverScript : MonoBehaviour {
 		}
 		if (Input.GetKey ("r")) {
             Restart();
+        }
+        if (!isGameOver && stateMachine.getGameState() == CentralStateScript.GameState.GameOver)
+        {
+            GameOver();
+            isGameOver = true;
         }
 	}
 

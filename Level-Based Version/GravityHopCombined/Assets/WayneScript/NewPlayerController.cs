@@ -96,4 +96,9 @@ public class NewPlayerController : MonoBehaviour {
 		}
 	}
 
+    void OnBecameInvisible()
+    {
+        stateMachine.GameOver();
+    }
+    
 }

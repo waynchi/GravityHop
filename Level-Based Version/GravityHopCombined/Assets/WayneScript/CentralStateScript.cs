@@ -41,4 +41,11 @@ public class CentralStateScript : MonoBehaviour {
 	public void GameOver() {
 		myGameState = GameState.GameOver;
 	}
+
+    // gets the game state
+    public GameState getGameState()
+    {
+        return myGameState;
+    }
+
 }
