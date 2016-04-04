@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 //This script will hold all the states for everything in the 
 public class CentralStateScript : MonoBehaviour {
 
 	//All enums are here
 	public enum Movement{Orbit, Flight};
-	public enum GameState{GameOver, Start, Playing};
+	public enum GameState{GameOver, Start, Playing, Victory};
 
 	//All states are here
 	Movement myMovement;
@@ -16,11 +17,13 @@ public class CentralStateScript : MonoBehaviour {
 	void Start () {
 		myMovement = Movement.Orbit;
 		myGameState = GameState.Start;
-
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (myGameState == GameState.Victory) {
+			SceneManager.LoadScene (0);
+		}
 		
 	}
 
@@ -47,5 +50,9 @@ public class CentralStateScript : MonoBehaviour {
     {
         return myGameState;
     }
+
+	public void Victory() {
+		myGameState = GameState.Victory;
+	}
 
 }

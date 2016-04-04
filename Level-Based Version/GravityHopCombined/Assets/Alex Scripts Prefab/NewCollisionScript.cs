@@ -86,13 +86,13 @@ public class NewCollisionScript : MonoBehaviour
             GameOver();
         }
 
-        else if (name.Contains("CoinSprite")) // adds on to the score
+        else if (name.Contains("Coin")) // adds on to the score
         {
             scoreScript.addScore(1000);
             Destroy(col.collider.gameObject);
         }
 
-        else if (name.Contains("Star")) // adds on to score multiplier
+		else if (name.Contains("Star") && !name.Contains("Planet")) // adds on to score multiplier
         {
             scoreScript.addMultiplier();
             Destroy(col.collider.gameObject);
