@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour {
 	public float fuel = 100;
 	public Vector2 MassCenter,WalkingDirection,BurstDirecton,LastMassCenter;
 	private Rigidbody2D rg2d;
-	private bool UFOEnableTouch = false,started = true, touchButton = true;
+	private bool UFOEnableTouch = false,started = false, touchButton = true;
 
 	public bool ComboInitiated = false;
 	public float lastComboTime = 0.0F;
@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour {
 
 
 	void DetectInput (){
-/*
+
 		foreach (Touch touch in Input.touches) {
 			if (touch.phase == TouchPhase.Ended){
 
@@ -67,27 +67,10 @@ public class PlayerController : MonoBehaviour {
 
 			}
 		}
-	*/
-
-		if (Input.GetKeyDown("up")){
-
-				if (touchButton) {
-					touchButton = false;
-				}
-				if (fuel > 0 && UFOEnableTouch) {
-					rg2d.AddForce (BurstDirecton * 4000, ForceMode2D.Force);
-					bouncingSound.Play ();
-					UFOEnableTouch = false;
-				}
-				//if(fuel>0)
-				//fuel -= touch.deltaPosition.magnitude/10;
-
-			}
-
-		if (rg2d.velocity.magnitude > 5)
+		if (rg2d.velocity.magnitude > 10)
 			rg2d.velocity = rg2d.velocity.normalized * 5;
-		if (rg2d.velocity.magnitude < 3)
-			rg2d.velocity = rg2d.velocity.normalized * 3;
+		if (rg2d.velocity.magnitude < 5)
+			rg2d.velocity = rg2d.velocity.normalized * 5;
 		if (Time.time - lastComboTime > comboTime) {
 			ComboInitiated = false;
 			ComboCount = 0;
@@ -96,15 +79,14 @@ public class PlayerController : MonoBehaviour {
 
 	}
 		
-	//Check collision with a planet, and get the burtst direction.
+
 	void OnCollisionEnter2D(Collision2D coll) {
-		if (coll.gameObject.tag.Equals ("Planet")) {
-			Rigidbody2D coll_rg = coll.gameObject.GetComponent<Rigidbody2D> ();
-			LastMassCenter = MassCenter;
-			MassCenter = coll_rg.position;
+		print("TEST");
+		Rigidbody2D coll_rg = coll.gameObject.GetComponent<Rigidbody2D> ();
+		LastMassCenter = MassCenter;
+		MassCenter = coll_rg.position;
 	
-			UFOEnableTouch = true;
-		}
+		UFOEnableTouch = true;
 	}
 
 	void GameStart(){
