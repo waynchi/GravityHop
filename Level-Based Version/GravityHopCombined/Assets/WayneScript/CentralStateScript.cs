@@ -8,6 +8,7 @@ public class CentralStateScript : MonoBehaviour {
 	//All enums are here
 	public enum Movement{Orbit, Flight};
 	public enum GameState{GameOver, Start, Playing, Victory};
+	public int sceneIndex = 0;
 
 	//All states are here
 	Movement myMovement;
@@ -22,7 +23,7 @@ public class CentralStateScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (myGameState == GameState.Victory) {
-			SceneManager.LoadScene (0);
+			SceneManager.LoadScene(sceneIndex);
 		}
 		
 	}

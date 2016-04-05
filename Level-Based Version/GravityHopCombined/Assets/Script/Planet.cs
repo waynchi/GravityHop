@@ -6,13 +6,16 @@ public class Planet : MonoBehaviour {
 	private PointEffector2D ef2d;
 	private GameObject player;
     private GameObject field;
+	public Vector2 initialVelocity;
 
 	// Use this for initialization
 	void Start () {
+		
 		rg2d = GetComponent<Rigidbody2D> ();
 		ef2d = GetComponent<PointEffector2D> ();
 		rg2d.mass = 30;
 		ef2d.forceMagnitude = -rg2d.mass*2;
+		rg2d.AddForce (initialVelocity*10, ForceMode2D.Impulse);
 
         // instantiate the visibility of gravity fields
         field = Instantiate(Resources.Load("Gravity Field"), transform.position, transform.rotation) as GameObject;
