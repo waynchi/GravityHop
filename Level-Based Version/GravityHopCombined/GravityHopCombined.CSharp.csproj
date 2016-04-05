@@ -56,12 +56,6 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -77,6 +71,7 @@
     <Compile Include="Assets\Alex Scripts Prefab\LevelClear.cs" />
     <Compile Include="Assets\Alex Scripts Prefab\NewCollisionScript.cs" />
     <Compile Include="Assets\Alex Scripts Prefab\NewGameOverScript.cs" />
+    <Compile Include="Assets\Alex Scripts Prefab\ScoreScript.cs" />
     <Compile Include="Assets\Alex Scripts Prefab\StartScript.cs" />
     <Compile Include="Assets\Alex Scripts Prefab\TimerScript.cs" />
     <Compile Include="Assets\Script\CollisionScript.cs" />

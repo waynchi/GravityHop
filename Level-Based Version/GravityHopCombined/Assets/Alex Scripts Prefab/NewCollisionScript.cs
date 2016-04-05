@@ -3,7 +3,6 @@ using System.Collections;
 
 public class NewCollisionScript : MonoBehaviour
 {
-
     public Canvas HUDCanvas;
 
     ScoreSystem scoreScript;

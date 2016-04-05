@@ -4,7 +4,7 @@ using System.Collections;
 
 public class TimerScript : MonoBehaviour {
 
-    public float sec = 30;
+    public float timeLeft = 30;
     Text time;
     bool stopTimer;
 
@@ -22,14 +22,20 @@ public class TimerScript : MonoBehaviour {
     void Update () {
         if (stateMachine.getGameState() != CentralStateScript.GameState.Victory)
         {
-            sec -= Time.deltaTime;
-            if (sec <= 0)
+            timeLeft -= Time.deltaTime;
+            if (timeLeft <= 0)
             {
-                sec = 0;
+                timeLeft = 0;
                 stateMachine.GameOver();
             }
-            string min = ((int)sec / 60).ToString();
-            time.text = min + ":" + sec.ToString(".") + sec.ToString(".00");
+
+            if (timeLeft < 100) {
+                time.text = "0" + ((int)timeLeft).ToString();
+            }
+            else if (timeLeft < 10)
+            {
+                time.text = "00" + ((int)timeLeft).ToString();
+            }
         }
     }
 
@@ -42,5 +48,11 @@ public class TimerScript : MonoBehaviour {
     {
         stopTimer = false;
     }
+
+    public float getTime()
+    {
+        return timeLeft;
+    }
+
 
 }
