@@ -18,10 +18,16 @@ public class Planet : MonoBehaviour {
         field = Instantiate(Resources.Load("Gravity Field"), transform.position, transform.rotation) as GameObject;
         CircleCollider2D[] cc2d = ef2d.GetComponents<CircleCollider2D>();
         field.transform.localScale = field.transform.localScale * transform.localScale.x * cc2d[1].radius;
+
+        if (gameObject.name == "StartPlanet")
+        {
+            Instantiate(Resources.Load("UFO"), transform.position + new Vector3(0, transform.localScale.x * 0.5f, 0), transform.rotation);
+        }
+
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 
