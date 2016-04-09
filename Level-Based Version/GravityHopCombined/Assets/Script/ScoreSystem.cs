@@ -25,6 +25,7 @@ public class ScoreSystem : MonoBehaviour {
     
     // Use this for initialization
     void Start () {
+        stop = true;
         text = GetComponent<Text>();
         score = 0;
         scoreMultiplier = 1;
@@ -53,11 +54,11 @@ public class ScoreSystem : MonoBehaviour {
         
 	}
 
-	void StopGame() {
+	public void StopGame() {
 		stop = true;
 	}
 
-	void StartGame() {
+	public void StartGame() {
 		stop = false;
 	}
 
