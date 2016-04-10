@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour {
 		}
 	*/
 
-		if (Input.GetKeyDown("up")){
+		if (Input.GetKeyDown("up") || Input.touchCount > 0){
 
 				if (touchButton) {
 					touchButton = false;
