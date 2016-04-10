@@ -18,6 +18,9 @@ public class LevelClear : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+		if (Input.GetKey ("w")) {
+			stateMachine.Victory ();
+		}
         if (displayScore == false && stateMachine.getGameState() == CentralStateScript.GameState.Victory)
         {
             LevelCleared();
@@ -25,14 +28,19 @@ public class LevelClear : MonoBehaviour {
         }
 	}
 
-    public void LevelCleared()
+    void LevelCleared()
     {
-        Debug.Log("HELLO");
-        anim.SetTrigger("LevelCleared");
+		anim.SetTrigger("LevelCleared");
     }
 
     public void NextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+		SceneManager.LoadScene(SceneManager.GetActiveScene ().buildIndex + 1);
     }
+
+	public void StartMenu()
+	{
+		SceneManager.LoadScene(0);
+	}
 }
