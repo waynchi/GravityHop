@@ -14,7 +14,9 @@ public class NewCollisionScript : MonoBehaviour
     {
         if (HUDCanvas == null)
             HUDCanvas = GameObject.FindGameObjectWithTag("HUD").GetComponent<Canvas>();
-		scoreScript = GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreScript>();
+
+        if (scoreScript == null)
+            scoreScript = GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreScript>();
         rb2d = GetComponent<Rigidbody2D>();
         invincibility = false;
     }

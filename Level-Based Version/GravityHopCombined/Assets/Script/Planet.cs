@@ -28,7 +28,7 @@ public class Planet : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-		
+        field.transform.position = transform.position;		
 	}
 
 	void OnCollisionEnter2D(Collision2D coll) {

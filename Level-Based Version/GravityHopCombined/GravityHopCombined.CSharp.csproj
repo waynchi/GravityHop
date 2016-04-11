@@ -81,6 +81,7 @@
     <Compile Include="Assets\Script\DroneScript.cs" />
     <Compile Include="Assets\Script\GameOverScript.cs" />
     <Compile Include="Assets\Script\LaserScript.cs" />
+    <Compile Include="Assets\Script\MoveOrbitKinematic.cs" />
     <Compile Include="Assets\Script\OffscreenTracker.cs" />
     <Compile Include="Assets\Script\Planet.cs" />
     <Compile Include="Assets\Script\PlanetMove.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="Assets\WayneScript\NewComboScript.cs" />
     <Compile Include="Assets\WayneScript\NewPlayerController.cs" />
     <Compile Include="Assets\WayneScript\OxygenScript.cs" />
+    <Compile Include="Assets\WayneScript\StarScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />

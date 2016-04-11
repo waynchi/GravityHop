@@ -42,7 +42,7 @@ public class NewPlayerController : MonoBehaviour {
 
 	void DetectInput (){
 		//Detect Input
-		if (Input.GetKeyDown ("up") || Input.touchCount > 0) {
+		if ((Input.GetKeyDown ("up") || Input.touchCount > 0) && stateMachine.getGameState() != CentralStateScript.GameState.Victory) {
 
 			if (touchButton) {
 				touchButton = false;

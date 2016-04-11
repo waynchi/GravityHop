@@ -13,13 +13,11 @@ public class BackgroundScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.position += new Vector3(20, 0, 0) * Time.deltaTime;
+        transform.position += new Vector3(0.2f, 0, 0) * Time.deltaTime;
 	}
 
     void OnBecomeInvisible()
     {
-        Vector3 pos = transform.position;
-        float x = pos.x - Background.rectTransform.rect.width * 2;
-        gameObject.transform.position = new Vector3(x, 0, 0);
+        gameObject.transform.position = new Vector3(-22, 0, 0);
     }
 }
