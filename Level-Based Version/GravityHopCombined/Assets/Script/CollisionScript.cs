@@ -8,7 +8,7 @@ public class CollisionScript : MonoBehaviour {
 	public Canvas ScoreCanvas;
 	Animator anim;
 	ScoreSystem scoreScript;
-    ScoreSystem ss;
+	ScoreScript ss;
     bool invincibility;
     private Rigidbody2D rb2d;
 
@@ -18,7 +18,7 @@ public class CollisionScript : MonoBehaviour {
     
     // Use this for initialization
     void Start () {
-        ss = GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreSystem>();
+		ss = GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreScript>();
         rb2d = GetComponent<Rigidbody2D>();
         invincibility = false;
 		scoreScript = ScoreCanvas.GetComponentInChildren<ScoreSystem> ();

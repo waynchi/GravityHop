@@ -8,14 +8,20 @@ public class StartScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		PlayerPrefs.DeleteAll ();
 		for (int i = 0; i < numOfLevels; i++) {
 			if (!PlayerPrefs.HasKey ("Level"+(i+1).ToString())) {
-				PlayerPrefs.SetInt ("Level" + (i+1).ToString(), 2);
+				PlayerPrefs.SetInt ("Level" + (i+1).ToString(), 0);
 			}
 		}
 
 
+	}
+
+	void Update () {
+		if (Input.GetKey ("r")) {
+			PlayerPrefs.DeleteAll ();
+			SceneManager.LoadScene (0);
+		}
 	}
 
 	public void LoadLevel(int level)

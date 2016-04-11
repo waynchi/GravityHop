@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 //This script will hold all the states for everything in the 
 public class CentralStateScript : MonoBehaviour {
 
+	//Score
+	private int currentScore;
+
 	//All enums are here
 	public enum Movement{Orbit, Flight};
 	public enum GameState{GameOver, Start, Playing, Victory};
@@ -47,8 +50,17 @@ public class CentralStateScript : MonoBehaviour {
         return myGameState;
     }
 
+	//Called when a victory is achieved
 	public void Victory() {
 		myGameState = GameState.Victory;
+	}
+
+	public void updateScore(int score) {
+		currentScore = score;
+	}
+
+	public int getScore() {
+		return currentScore;
 	}
 
 }

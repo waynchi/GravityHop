@@ -3,8 +3,12 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class ScoreScript : MonoBehaviour {
+
+	public CentralStateScript stateMachine;
     Text text;
-    public int score;
+    public int totalScore;
+	public int timeScore;
+	public int coinScore;
     public int scoreMultiplier;
     public Canvas HUDCanvas;
     TimerScript time;
@@ -12,11 +16,15 @@ public class ScoreScript : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+		if (stateMachine == null)
+			stateMachine = GameObject.FindGameObjectWithTag("SM").GetComponent<CentralStateScript>();
         text = GetComponent<Text>();
         if (HUDCanvas == null)
             HUDCanvas = GameObject.FindGameObjectWithTag("HUD").GetComponent<Canvas>();
 
-        score = 0;
+		totalScore = 0;
+		timeScore = 0;
+		coinScore = 0;
         scoreMultiplier = 1;
 
         Transform t = HUDCanvas.transform.FindChild("Timer");
@@ -32,8 +40,22 @@ public class ScoreScript : MonoBehaviour {
 
         // set the text with score
         int sec = (int)(time.getTime() * 10.0f);
-        text.text = "Score: " + sec * 10;
+		timeScore = sec * 10;
+		totalScore = timeScore + coinScore;
+		text.text = "Score: " + totalScore;
+		stateMachine.updateScore (totalScore);
+
     }
 
+	public void addScore(int num)
+	{
+		coinScore += num * scoreMultiplier;
+	}
+
+	public void addMultiplier()
+	{
+		++scoreMultiplier;
+		//timeMultiplier = 0;
+	}
 }
 

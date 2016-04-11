@@ -5,7 +5,7 @@ public class NewCollisionScript : MonoBehaviour
 {
     public Canvas HUDCanvas;
 
-    ScoreSystem scoreScript;
+	ScoreScript scoreScript;
     bool invincibility;
     private Rigidbody2D rb2d;
 
@@ -14,7 +14,7 @@ public class NewCollisionScript : MonoBehaviour
     {
         if (HUDCanvas == null)
             HUDCanvas = GameObject.FindGameObjectWithTag("HUD").GetComponent<Canvas>();
-        scoreScript = GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreSystem>();
+		scoreScript = GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreScript>();
         rb2d = GetComponent<Rigidbody2D>();
         invincibility = false;
     }
@@ -124,7 +124,7 @@ public class NewCollisionScript : MonoBehaviour
     {
         Animator anim = HUDCanvas.GetComponent<Animator>();
         anim.SetTrigger("GameOver");
-        scoreScript.stop = true;
+        //scoreScript.stop = true;
         HUDCanvas.GetComponentInChildren<UnityEngine.UI.Button>().enabled = true;
 
         anim = HUDCanvas.GetComponent<Animator>();
