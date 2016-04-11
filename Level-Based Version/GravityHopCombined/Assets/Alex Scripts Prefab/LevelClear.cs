@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelClear : MonoBehaviour {
     //central state machine
@@ -86,6 +87,32 @@ public class LevelClear : MonoBehaviour {
 		if (PlayerPrefs.GetInt ("Level" + level.ToString ()) < stars) {
 			PlayerPrefs.SetInt ("Level" + (level).ToString (), stars);
 		}
+
+		// Changing Sprite image
+		Sprite starSprite;
+
+		switch (stars) {
+
+		case 0:
+			starSprite = Resources.Load<Sprite> ("three_stars_empty");
+			break;
+		case 1:
+			starSprite = Resources.Load<Sprite> ("one_star");
+			break;
+		case 2:
+			starSprite = Resources.Load<Sprite> ("two_stars");
+			break;
+		case 3:
+			starSprite = Resources.Load<Sprite> ("three_stars");
+			break;
+		default:
+
+			starSprite = Resources.Load<Sprite> ("three_stars_empty");
+			break;
+		}
+
+		GameObject.Find ("Stars").GetComponent<Image> ().sprite = starSprite;
+
     }
 
     public void NextLevel()
