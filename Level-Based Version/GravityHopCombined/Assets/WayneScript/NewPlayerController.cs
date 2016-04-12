@@ -37,8 +37,14 @@ public class NewPlayerController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		DetectInput ();
-	}
+        if (stateMachine.getMovement() == CentralStateScript.Movement.Orbit && rg2d.velocity.magnitude > 3)
+        {
+            Debug.Log(rg2d.velocity);
+            rg2d.velocity = 3 * rg2d.velocity.normalized;
+        }
+
+        DetectInput();
+    }
 
 	void DetectInput (){
 		//Detect Input
