@@ -18,6 +18,8 @@ public class NewPlayerController : MonoBehaviour {
 	/*Combo Portion of the code. It's unavoidable */
 	public NewComboScript comboScript;
 
+    bool stop = false;
+
 	// Use this for initialization
 	void Start () {
         if (stateMachine == null)
@@ -37,46 +39,57 @@ public class NewPlayerController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        if (stateMachine.getMovement() == CentralStateScript.Movement.Orbit && rg2d.velocity.magnitude > 3)
-        {
-            Debug.Log(rg2d.velocity);
-            rg2d.velocity = 3 * rg2d.velocity.normalized;
-        }
-
         DetectInput();
     }
 
 	void DetectInput (){
 		//Detect Input
-		if ((Input.GetKeyDown ("up") || Input.touchCount > 0) && stateMachine.getGameState() != CentralStateScript.GameState.Victory) {
-
-			if (touchButton) {
-				touchButton = false;
-			}
-			if (UFOEnableTouch) {
-                //Take flight
-                CurrentPlanet.enabled = false;
-                rg2d.velocity = BurstDirecton * 200;
-//                rg2d.AddForce (BurstDirecton * 4000, ForceMode2D.Force);
-				if (bouncingSound != null) {
-					bouncingSound.Play ();
-				}
-				if (stateMachine) {
-					stateMachine.enterFlight ();
-				} else {
-					Debug.Log ("State Machine does not exist");
-					Application.Quit ();
-				}
-				UFOEnableTouch = false;
-			}
-
+        if(stateMachine.getGameState() != CentralStateScript.GameState.Victory)
+         {
+            if (Input.GetKeyDown("up") || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))
+            {
+                rg2d.velocity = new Vector2(0, 0);
+                rg2d.angularVelocity = 0.0f;
+                stop = true;
+            }
+            else if (Input.GetKeyUp("up") || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended))
+            {
+                stop = false;
+                if (touchButton)
+                {
+                    touchButton = false;
+                }
+                if (UFOEnableTouch)
+                {
+                    //Take flight
+                    CurrentPlanet.enabled = false;
+                    rg2d.velocity = BurstDirecton * 200;
+                    rg2d.angularVelocity = 30.0f;
+                    if (bouncingSound != null)
+                    {
+                        bouncingSound.Play();
+                    }
+                    if (stateMachine)
+                    {
+                        stateMachine.enterFlight();
+                    }
+                    else {
+                        Debug.Log("State Machine does not exist");
+                        Application.Quit();
+                    }
+                    UFOEnableTouch = false;
+                }
+            }
 		}
 
-		if (rg2d.velocity.magnitude > 5)
-			rg2d.velocity = rg2d.velocity.normalized * 5;
-		if (rg2d.velocity.magnitude < 3)
-			rg2d.velocity = rg2d.velocity.normalized * 3;
-	}
+        if (!stop)
+        {
+            if (rg2d.velocity.magnitude > 4)
+                rg2d.velocity = rg2d.velocity.normalized * 4;
+            if (rg2d.velocity.magnitude < 3)
+                rg2d.velocity = rg2d.velocity.normalized * 3;
+        }
+    }
 
 	void OnCollisionEnter2D(Collision2D coll) {
 		if (coll.gameObject.tag.Equals ("Planet")) {

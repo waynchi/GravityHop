@@ -3,17 +3,16 @@ using System.Collections;
 
 public class LaserScript : MonoBehaviour {
 
-    public BoxCollider2D bc2d;
-    public SpriteRenderer sr;
-    float timeOnOff;
+    BoxCollider2D bc2d;
+    SpriteRenderer sr;
+    public float timeOnOff = 1;
     float timeLeft;
 
 	// Use this for initialization
 	void Start () {
         bc2d = GetComponent<BoxCollider2D>();
         sr = GetComponent<SpriteRenderer>();
-        timeOnOff = 1;
-        timeLeft = 1;
+        timeLeft = timeOnOff;
 	}
 	
 	// Update is called once per frame
