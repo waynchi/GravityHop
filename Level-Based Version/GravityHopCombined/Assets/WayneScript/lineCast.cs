@@ -1,0 +1,43 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class lineCast : MonoBehaviour {
+
+	private LineRenderer lineRenderer;
+	private NewPlayerController playerController;
+	private Rigidbody2D UFO;
+	private CentralStateScript stateMachine;
+	public Transform laserHit;
+
+	// Use this for initialization
+	void Start () {
+		lineRenderer = GetComponent<LineRenderer> ();
+		lineRenderer.enabled = true;
+		lineRenderer.useWorldSpace = true;
+		stateMachine = GameObject.FindGameObjectWithTag("SM").GetComponent<CentralStateScript>();
+	}
+
+	// Update is called once per frame
+	void Update () {
+		//RaycastHit2D hit = Physics2D.Raycast (transform.position, transform.up);
+		//Debug.DrawLine (transform.position, hit.point);
+		//laserHit.position = hit.point;
+		if (stateMachine.getMovement() == CentralStateScript.Movement.Flight) {
+			lineRenderer.enabled = false;
+		} else if (stateMachine.getMovement() == CentralStateScript.Movement.Orbit) {
+			lineRenderer.enabled = true;
+		}
+
+		if (UFO == null) {
+			UFO = GameObject.FindGameObjectWithTag ("Player").GetComponent<Rigidbody2D> ();
+			if (UFO == null) {
+				return;
+			}
+			playerController = UFO.GetComponent<NewPlayerController> ();
+		}
+		transform.position = UFO.position + playerController.BurstDirecton / 4;
+		laserHit.position = (Vector2)transform.position + playerController.BurstDirecton /2;
+		lineRenderer.SetPosition (0, transform.position);
+		lineRenderer.SetPosition (1, laserHit.position);
+	}
+}

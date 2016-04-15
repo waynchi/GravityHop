@@ -121,5 +121,7 @@ public class NewPlayerController : MonoBehaviour {
     {
         stateMachine.GameOver();
     }
+
+
     
 }
