@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class MoveOrbitKinematic : MonoBehaviour {
-
 	public Vector2 TargetCenter;
 	public float AngularSpeed = 10;
 	// Use this for initialization
