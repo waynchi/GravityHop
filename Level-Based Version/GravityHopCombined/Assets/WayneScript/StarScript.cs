@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class StarScript : MonoBehaviour {
 
-	int numOfLevels = 5;
+	int numOfLevels = 15;
 
 	// Use this for initialization
 	void Start () {
