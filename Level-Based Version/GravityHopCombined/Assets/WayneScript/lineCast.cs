@@ -6,7 +6,9 @@ public class lineCast : MonoBehaviour {
 	private LineRenderer lineRenderer;
 	private NewPlayerController playerController;
 	private Rigidbody2D UFO;
+	private GameObject direction;
 	private CentralStateScript stateMachine;
+	private Quaternion _facing;
 	public Transform laserHit;
 
 	// Use this for initialization
@@ -15,6 +17,8 @@ public class lineCast : MonoBehaviour {
 		lineRenderer.enabled = true;
 		lineRenderer.useWorldSpace = true;
 		stateMachine = GameObject.FindGameObjectWithTag("SM").GetComponent<CentralStateScript>();
+		direction = (GameObject)Instantiate(Resources.Load("direction"), laserHit.position + new Vector3(0, transform.localScale.x * 0.5f, 0), laserHit.rotation);
+		_facing = direction.transform.rotation;
 	}
 
 	// Update is called once per frame
@@ -37,7 +41,9 @@ public class lineCast : MonoBehaviour {
 		}
 		transform.position = UFO.position + playerController.BurstDirecton / 4;
 		laserHit.position = (Vector2)transform.position + playerController.BurstDirecton /2;
-		lineRenderer.SetPosition (0, transform.position);
-		lineRenderer.SetPosition (1, laserHit.position);
+		//lineRenderer.SetPosition (0, transform.position);
+		//lineRenderer.SetPosition (1, laserHit.position);
+		direction.transform.position = laserHit.position;
+		direction.transform.rotation = Quaternion.LookRotation(playerController.BurstDirecton.normalized) * _facing;
 	}
 }

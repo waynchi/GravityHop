@@ -80,6 +80,127 @@ public class LevelClear : MonoBehaviour {
 				stars = 3;
 			}
 			break;
+		case 5: 
+			if (stateMachine.getScore () >= 1000) {
+				stars = 1;
+			}
+			if (stateMachine.getScore () >= 2000) {
+				stars = 2;
+			}
+			if (stateMachine.getScore () >= 2500) {
+				stars = 3;
+			}
+			break;
+		case 6: 
+			if (stateMachine.getScore () >= 1000) {
+				stars = 1;
+			}
+			if (stateMachine.getScore () >= 2000) {
+				stars = 2;
+			}
+			if (stateMachine.getScore () >= 2500) {
+				stars = 3;
+			}
+			break;
+		case 7: 
+			if (stateMachine.getScore () >= 1000) {
+				stars = 1;
+			}
+			if (stateMachine.getScore () >= 2000) {
+				stars = 2;
+			}
+			if (stateMachine.getScore () >= 2500) {
+				stars = 3;
+			}
+			break;
+		case 8: 
+			if (stateMachine.getScore () >= 1000) {
+				stars = 1;
+			}
+			if (stateMachine.getScore () >= 2000) {
+				stars = 2;
+			}
+			if (stateMachine.getScore () >= 2500) {
+				stars = 3;
+			}
+			break;
+		case 9: 
+			if (stateMachine.getScore () >= 1000) {
+				stars = 1;
+			}
+			if (stateMachine.getScore () >= 2000) {
+				stars = 2;
+			}
+			if (stateMachine.getScore () >= 2500) {
+				stars = 3;
+			}
+			break;
+		case 10: 
+			if (stateMachine.getScore () >= 1000) {
+				stars = 1;
+			}
+			if (stateMachine.getScore () >= 2000) {
+				stars = 2;
+			}
+			if (stateMachine.getScore () >= 2500) {
+				stars = 3;
+			}
+			break;
+		case 11: 
+			if (stateMachine.getScore () >= 1000) {
+				stars = 1;
+			}
+			if (stateMachine.getScore () >= 2000) {
+				stars = 2;
+			}
+			if (stateMachine.getScore () >= 2500) {
+				stars = 3;
+			}
+			break;
+		case 12: 
+			if (stateMachine.getScore () >= 1000) {
+				stars = 1;
+			}
+			if (stateMachine.getScore () >= 2000) {
+				stars = 2;
+			}
+			if (stateMachine.getScore () >= 2500) {
+				stars = 3;
+			}
+			break;
+		case 13: 
+			if (stateMachine.getScore () >= 1000) {
+				stars = 1;
+			}
+			if (stateMachine.getScore () >= 2000) {
+				stars = 2;
+			}
+			if (stateMachine.getScore () >= 2500) {
+				stars = 3;
+			}
+			break;
+		case 14: 
+			if (stateMachine.getScore () >= 1000) {
+				stars = 1;
+			}
+			if (stateMachine.getScore () >= 2000) {
+				stars = 2;
+			}
+			if (stateMachine.getScore () >= 2500) {
+				stars = 3;
+			}
+			break;
+		case 15: 
+			if (stateMachine.getScore () >= 1000) {
+				stars = 1;
+			}
+			if (stateMachine.getScore () >= 2000) {
+				stars = 2;
+			}
+			if (stateMachine.getScore () >= 2500) {
+				stars = 3;
+			}
+			break;
 		default:
 			stars = 0;
 			break;

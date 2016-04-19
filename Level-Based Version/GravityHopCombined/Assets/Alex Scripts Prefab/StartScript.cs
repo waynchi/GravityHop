@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class StartScript : MonoBehaviour {
 
-	int numOfLevels = 4;
+	int numOfLevels = 15;
 
 	// Use this for initialization
 	void Start () {
