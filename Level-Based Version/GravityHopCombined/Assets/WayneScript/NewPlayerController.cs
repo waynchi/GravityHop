@@ -18,7 +18,8 @@ public class NewPlayerController : MonoBehaviour {
 	/*Combo Portion of the code. It's unavoidable */
 	public NewComboScript comboScript;
 
-    bool stop = false;
+    bool slowdown = false;
+    float tapTime = 0.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -46,43 +47,52 @@ public class NewPlayerController : MonoBehaviour {
 		//Detect Input
         if(stateMachine.getGameState() != CentralStateScript.GameState.Victory)
          {
-            if (Input.GetKeyDown("up") || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))
+            if (Input.GetKey("up") || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Stationary))
             {
-                rg2d.velocity = new Vector2(0, 0);
-                rg2d.angularVelocity = 0.0f;
-                stop = true;
+                tapTime += Time.deltaTime;
             }
             else if (Input.GetKeyUp("up") || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended))
             {
-                stop = false;
-                if (touchButton)
+                Debug.Log(tapTime);
+                if (tapTime <= 0.15)
                 {
-                    touchButton = false;
-                }
-                if (UFOEnableTouch)
-                {
-                    //Take flight
-                    CurrentPlanet.enabled = false;
-                    rg2d.velocity = BurstDirecton * 200;
-                    rg2d.angularVelocity = 30.0f;
-                    if (bouncingSound != null)
+                    if (touchButton)
                     {
-                        bouncingSound.Play();
+                        touchButton = false;
                     }
-                    if (stateMachine)
+                    if (UFOEnableTouch)
                     {
-                        stateMachine.enterFlight();
+                        //Take flight
+                        CurrentPlanet.enabled = false;
+                        rg2d.velocity = BurstDirecton * 200;
+                        rg2d.angularVelocity = 30.0f;
+                        if (bouncingSound != null)
+                        {
+                            bouncingSound.Play();
+                        }
+                        if (stateMachine)
+                        {
+                            stateMachine.enterFlight();
+                        }
+                        else {
+                            Debug.Log("State Machine does not exist");
+                            Application.Quit();
+                        }
+                        UFOEnableTouch = false;
                     }
-                    else {
-                        Debug.Log("State Machine does not exist");
-                        Application.Quit();
-                    }
-                    UFOEnableTouch = false;
                 }
+                tapTime = 0;
             }
 		}
 
-        if (!stop)
+        if (tapTime > 0.05)
+        {
+            if (rg2d.velocity.magnitude > 1.5)
+                rg2d.velocity = rg2d.velocity.normalized * 1.5f;
+            if (rg2d.velocity.magnitude < 1.2)
+                rg2d.velocity = rg2d.velocity.normalized * 1.2f;
+        }
+        else
         {
             if (rg2d.velocity.magnitude > 4)
                 rg2d.velocity = rg2d.velocity.normalized * 4;
