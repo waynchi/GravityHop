@@ -13,7 +13,7 @@ public class CentralStateScript : MonoBehaviour {
 	public enum GameState{GameOver, Start, Playing, Victory};
 
 	//All states are here
-	Movement myMovement;
+	public Movement myMovement;
 	GameState myGameState; 
 
 	// Use this for initialization

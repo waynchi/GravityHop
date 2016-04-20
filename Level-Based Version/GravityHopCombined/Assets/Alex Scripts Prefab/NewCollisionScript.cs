@@ -38,7 +38,7 @@ public class NewCollisionScript : MonoBehaviour
                 float angle = Vector3.Angle(ortho, rb2d.velocity);
 
                 // if the ship takes a direct hit
-                if (angle <= 30)
+                if (angle <= 360)
                 {
                     Destroy(gameObject);
                     GameOver();

@@ -85,7 +85,7 @@ public class NewPlayerController : MonoBehaviour {
             }
 		}
 
-        if (tapTime > 0.05)
+        if (tapTime > 0.05 && UFOEnableTouch)
         {
             if (rg2d.velocity.magnitude > 1.5)
                 rg2d.velocity = rg2d.velocity.normalized * 1.5f;
@@ -115,8 +115,7 @@ public class NewPlayerController : MonoBehaviour {
             if (LastPlanet != null)
                 LastPlanet.enabled = true;
 
-            if (comboScript != null && MassCenter != LastMassCenter) {
-				comboScript.Combo ();
+            if (MassCenter != LastMassCenter) {
 				if (stateMachine) {
 					stateMachine.enterOrbit ();
 				} else {
