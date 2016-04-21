@@ -91,7 +91,7 @@ public class NewCollisionScript : MonoBehaviour
 
         else if (name.Contains("Coin")) // adds on to the score
         {
-            scoreScript.addScore(1000);
+            scoreScript.addScore(500);
             Destroy(col.collider.gameObject);
         }
 

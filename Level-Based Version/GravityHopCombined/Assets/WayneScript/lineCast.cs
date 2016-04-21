@@ -39,11 +39,16 @@ public class lineCast : MonoBehaviour {
 			}
 			playerController = UFO.GetComponent<NewPlayerController> ();
 		}
-		transform.position = UFO.position + playerController.BurstDirecton / 4;
-		laserHit.position = (Vector2)transform.position + playerController.BurstDirecton /2;
-		//lineRenderer.SetPosition (0, transform.position);
-		//lineRenderer.SetPosition (1, laserHit.position);
-		direction.transform.position = laserHit.position;
-		direction.transform.rotation = Quaternion.LookRotation(playerController.BurstDirecton.normalized) * _facing;
+		transform.position = UFO.position + playerController.BurstDirecton;
+		laserHit.position = (Vector2)transform.position + playerController.BurstDirecton / 10;
+		lineRenderer.SetPosition (0, transform.position);
+		lineRenderer.SetPosition (1, laserHit.position);
+		/*direction.transform.position = laserHit.position;
+		Quaternion rotation = Quaternion.LookRotation(playerController.BurstDirecton.normalized);
+		rotation.x = 0f;
+		rotation.y = 0f;
+		direction.transform.rotation = rotation;*/
+		//direction.transform.rotation = Quaternion.LookRotation(playerController.BurstDirecton.normalized) * _facing;
+
 	}
 }

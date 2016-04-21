@@ -37,7 +37,7 @@ public class LevelClear : MonoBehaviour {
 		//A different scoring requirement for each level
 		switch (level) {
 		case 1: 
-			if (stateMachine.getScore () >= 1000) {
+			if (stateMachine.getScore () >= 1500) {
 				stars = 1;
 			}
 			if (stateMachine.getScore () >= 2000) {
@@ -51,10 +51,10 @@ public class LevelClear : MonoBehaviour {
 			if (stateMachine.getScore () >= 1000) {
 				stars = 1;
 			}
-			if (stateMachine.getScore () >= 2000) {
+			if (stateMachine.getScore () >= 1900) {
 				stars = 2;
 			}
-			if (stateMachine.getScore () >= 2500) {
+			if (stateMachine.getScore () >= 2200) {
 				stars = 3;
 			}
 			break;
@@ -65,29 +65,29 @@ public class LevelClear : MonoBehaviour {
 			if (stateMachine.getScore () >= 2000) {
 				stars = 2;
 			}
-			if (stateMachine.getScore () >= 2500) {
+			if (stateMachine.getScore () >= 2400) {
 				stars = 3;
 			}
 			break;
 		case 4: 
-			if (stateMachine.getScore () >= 1000) {
+			if (stateMachine.getScore () >= 3000) {
 				stars = 1;
 			}
-			if (stateMachine.getScore () >= 2000) {
+			if (stateMachine.getScore () >= 4500) {
 				stars = 2;
 			}
-			if (stateMachine.getScore () >= 2500) {
+			if (stateMachine.getScore () >= 5200) {
 				stars = 3;
 			}
 			break;
 		case 5: 
-			if (stateMachine.getScore () >= 1000) {
+			if (stateMachine.getScore () >= 1500) {
 				stars = 1;
 			}
-			if (stateMachine.getScore () >= 2000) {
+			if (stateMachine.getScore () >= 1900) {
 				stars = 2;
 			}
-			if (stateMachine.getScore () >= 2500) {
+			if (stateMachine.getScore () >= 2200) {
 				stars = 3;
 			}
 			break;
