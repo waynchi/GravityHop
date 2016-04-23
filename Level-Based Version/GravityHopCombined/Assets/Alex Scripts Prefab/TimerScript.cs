@@ -29,12 +29,12 @@ public class TimerScript : MonoBehaviour {
                 stateMachine.GameOver();
             }
 
-            if (timeLeft < 100) {
-                time.text = "0" + ((int)timeLeft).ToString();
-            }
-            else if (timeLeft < 10)
+            if (timeLeft < 10)
             {
                 time.text = "00" + ((int)timeLeft).ToString();
+            }
+            else {
+                time.text = "0" + ((int)timeLeft).ToString();
             }
         }
     }
