@@ -24,11 +24,18 @@ public class StartScript : MonoBehaviour {
 		}
 	}
 
-	public void LoadLevel(int level)
+
+    public void LoadLevel(int level)
 	{
 		// BuildIndex
 		// 0: Start Screen
 		// 1: level1
 		SceneManager.LoadScene(level);
 	}
+
+    public void ClearGame()
+    {
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene(0);
+    }
 }
