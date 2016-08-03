@@ -2,6 +2,9 @@
 using System.Collections;
 using UnityEngine.UI;
 
+/// <summary>
+/// A Combo Script for landing on multiple planets in succession
+/// </summary>
 public class NewComboScript : MonoBehaviour {
 
 	public bool ComboInitiated = false;

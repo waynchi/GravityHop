@@ -2,6 +2,9 @@
 using System.Collections;
 using UnityEngine.UI;
 
+/// <summary>
+/// Used for the star rating system in the level selection screen
+/// </summary>
 public class StarScript : MonoBehaviour {
 
 	int numOfLevels = 15;

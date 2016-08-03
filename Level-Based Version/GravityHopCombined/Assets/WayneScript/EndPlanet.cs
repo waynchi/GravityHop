@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// End Planet win condition
+/// </summary>
 public class EndPlanet : MonoBehaviour {
 
 	public CentralStateScript stateMachine;

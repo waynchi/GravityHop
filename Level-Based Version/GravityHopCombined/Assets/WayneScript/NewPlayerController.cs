@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// New player controller
+/// Controls the player
+/// </summary>
 public class NewPlayerController : MonoBehaviour {
 
 	//Key State Machine

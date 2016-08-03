@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-
+/// <summary>
+/// Oxygen script.
+/// Limit on how long the player can stay in space without touching a planet
+/// </summary>
 public class OxygenScript : MonoBehaviour {
 
 	//central state machine

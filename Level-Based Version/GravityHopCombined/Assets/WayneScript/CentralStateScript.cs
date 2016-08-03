@@ -2,7 +2,12 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-//This script will hold all the states for everything in the 
+/// <summary>
+/// This script will hold all the states for everything in the 
+/// We were having trouble with version control between different members of the group
+/// So I created this central state script to ensure that everything we needed is in one place.
+/// Also, ensure that files/features aren't missing as everything requires the Central Control Script
+/// </summary>
 public class CentralStateScript : MonoBehaviour {
 
 	//Score

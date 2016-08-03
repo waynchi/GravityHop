@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// A line that shows the direction the ship will travel in
+/// </summary>
 public class lineCast : MonoBehaviour {
 
 	private LineRenderer lineRenderer;

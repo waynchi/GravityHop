@@ -1,6 +1,16 @@
-﻿<Properties StartupItem="GravityHopCombined.CSharp.Plugins.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench />
+﻿<Properties StartupItem="GravityHopCombined.CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\WayneScript\NewComboScript.cs">
+    <Files>
+      <File FileName="Assets\WayneScript\CentralStateScript.cs" Line="7" Column="4" />
+      <File FileName="Assets\WayneScript\NewPlayerController.cs" Line="116" Column="17" />
+      <File FileName="Assets\WayneScript\OxygenScript.cs" Line="6" Column="4" />
+      <File FileName="Assets\WayneScript\EndPlanet.cs" Line="5" Column="29" />
+      <File FileName="Assets\WayneScript\StarScript.cs" Line="6" Column="1" />
+      <File FileName="Assets\WayneScript\lineCast.cs" Line="6" Column="1" />
+      <File FileName="Assets\WayneScript\NewComboScript.cs" Line="41" Column="5" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
